@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,6 +11,17 @@ export class AppComponent {
 
   addTodo(value) {
     this.todoArray.push(value);
-    console.log(this.todoArray);
+  }
+
+  deleteItem(index) {
+    this.todoArray.splice(index, 1);
+  }
+
+  todoSubmit(value: any) {
+    if (value !== '') {
+      this.todoArray.push(value.todo);
+    } else {
+      alert('Fieled required **');
+    }
   }
 }
