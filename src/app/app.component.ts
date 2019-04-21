@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   todoArray = [];
+  public counterValue = 0;
 
   addTodo(value) {
     this.todoArray.push(value);
@@ -23,5 +24,13 @@ export class AppComponent {
     } else {
       alert('Fieled required **');
     }
+  }
+
+  public onIncrease(value: number): void {
+    this.counterValue += value;
+  }
+
+  public onDecrease(value: number): void {
+    this.counterValue -= value;
   }
 }

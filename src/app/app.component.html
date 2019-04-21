@@ -12,10 +12,19 @@
    <div class="data">
     <div class="list-instyled">
       <li *ngFor="let todo of todoArray; index as i;">{{todo}}
-          <i class="material-icons" (click)="deleteItem(i)>delete</i>
+          <i class="material-icons" (click)="deleteItem(i)">delete</i>
       </li>
     </div>
   </div>
   </form>
+ </div>
+ <hr>
+
+<div class="container">
+  <app-display [value]="counterValue"></app-display>
+  <app-actions-controls
+     (increase)="onIncrease($event)"
+      (decrease)="onDecrease($event)">
+  </app-actions-controls>
  </div>
 <router-outlet></router-outlet>
